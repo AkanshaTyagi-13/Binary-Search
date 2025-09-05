@@ -1,0 +1,17 @@
+class Solution {
+    int lowerBound(int[] arr, int target) {
+        // code here
+        int s=0,e=arr.length-1,ans=Integer.MAX_VALUE;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(arr[mid]>=target){
+                ans=Math.min(ans,mid);
+                e=mid-1;
+            }
+            else{
+                s=mid+1;
+            }
+        }
+        return ans==Integer.MAX_VALUE?arr.length:ans;
+    }
+}
