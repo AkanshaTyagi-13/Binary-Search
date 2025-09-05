@@ -1,0 +1,17 @@
+class Solution {
+    public int findFloor(int[] arr, int x) {
+        // code here
+        int s=0,e=arr.length-1,ans=Integer.MIN_VALUE;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(arr[mid]<=x){
+                ans=Math.max(ans,mid);
+                s=mid+1;
+            }
+            else{
+                e=mid-1;
+            }
+        }
+        return ans==Integer.MIN_VALUE?-1:ans;
+    }
+}
