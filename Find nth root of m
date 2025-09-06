@@ -1,0 +1,17 @@
+class Solution {
+    public int nthRoot(int n, int m) {
+        // code here
+        int s=1,e=m,ans=-1;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if((long)(Math.pow(mid,n))==m) return mid;
+            else if((long)(Math.pow(mid,n))<m){
+                s=mid+1;
+            }
+            else{
+                e=mid-1;
+            }
+        }
+        return ans;
+    }
+}
